@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes cinemaDolly {
+  0% {
+    transform: scale(1.02) translate3d(0%, 0%, 0);
+  }
+  50% {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+  100% {
+    transform: scale(1.02) translate3d(0%, 0%, 0);
+  }
+}
+
+@keyframes lightRaysDrift {
+  0%, 100% {
+    opacity: 0.35;
+    transform: translateX(-2%) rotate(-2deg) scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: translateX(3%) rotate(1deg) scale(1.06);
+  }
+}
+
+.animate-cinema-dolly {
+  animation: cinemaDolly 9s ease-in-out infinite;
+}
+
+.animate-light-rays {
+  animation: lightRaysDrift 9s ease-in-out infinite;
+}
